@@ -155,13 +155,4 @@ DELETE /api/students/{id}
 
 ---
 
-## Notes
-- Data is saved in `Data/students.json` automatically.
-- You don’t need to manually create the file; it will be generated when the API first runs.
-- PATCH requests do not require all fields — only the ones you want to update.
 
----
-
-## Author
-Your Name  
-📧 your.email@example.com
