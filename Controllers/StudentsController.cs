@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using StudentManagementAPI.Models;
 using StudentManagementAPI.Services;
@@ -6,6 +7,7 @@ namespace StudentManagementAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize] // Require authentication for all endpoints by default
     public class StudentsController : ControllerBase
     {
         private readonly StudentService _service;
@@ -22,7 +24,7 @@ namespace StudentManagementAPI.Controllers
         public IActionResult GetById(int id)
         {
             var student = _service.GetById(id);
-            return student == null ? NotFound() : Ok(student);
+            return student == null ? NotFound(new { message = "Student not found" }) : Ok(student);
         }
 
         [HttpPost]
@@ -33,24 +35,21 @@ namespace StudentManagementAPI.Controllers
         }
         
         [HttpPatch("{id}")]
-public IActionResult PartialUpdate(int id, [FromBody] Student updates)
-{
-    if (_service.PartialUpdate(id, updates))
-        return Ok(new { message = "Student updated successfully" });
+        public IActionResult PartialUpdate(int id, [FromBody] Student updates)
+        {
+            if (_service.PartialUpdate(id, updates))
+                return Ok(new { message = "Student updated successfully" });
 
-    return NotFound(new { message = "Student not found" });
-}
+            return NotFound(new { message = "Student not found" });
+        }
 
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            if (_service.Delete(id))
+                return Ok(new { message = "Student deleted successfully" });
 
-
-      [HttpDelete("{id}")]
-public IActionResult Delete(int id)
-{
-    if (_service.Delete(id))
-        return Ok(new { message = "Student deleted successfully" });
-
-    return NotFound(new { message = "Student not found" });
-}
-
+            return NotFound(new { message = "Student not found" });
+        }
     }
 }

@@ -33,3 +33,11 @@ C:\Users\ANIMESH\StudentManagementAPI\obj\Debug\net8.0\StudentManagementAPI.pdb
 C:\Users\ANIMESH\StudentManagementAPI\obj\Debug\net8.0\StudentManagementAPI.genruntimeconfig.cache
 C:\Users\ANIMESH\StudentManagementAPI\obj\Debug\net8.0\ref\StudentManagementAPI.dll
 C:\Users\ANIMESH\StudentManagementAPI\bin\Debug\net8.0\Data\students.json
+C:\Users\ANIMESH\StudentManagementAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\ANIMESH\StudentManagementAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\ANIMESH\StudentManagementAPI\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ANIMESH\StudentManagementAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\ANIMESH\StudentManagementAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\ANIMESH\StudentManagementAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\ANIMESH\StudentManagementAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ANIMESH\StudentManagementAPI\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

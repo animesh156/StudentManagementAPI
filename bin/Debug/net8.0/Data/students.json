@@ -38,13 +38,5 @@
     "Class": "7-B",
     "DateOfBirth": "2011-01-09T00:00:00",
     "ContactNumber": "123456789"
-  },
-  {
-    "Id": 6,
-    "FullName": "Manish Kumar",
-    "RollNumber": "S106",
-    "Class": "9-B",
-    "DateOfBirth": "2009-09-15T00:00:00",
-    "ContactNumber": "123456789"
   }
 ]
