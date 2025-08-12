@@ -1,7 +1,7 @@
 # Student Management API
 
 A simple ASP.NET Core Web API for managing student records with JSON file storage.  
-Supports CRUD operations and partial updates using HTTP PATCH.
+Supports CRUD operations, partial updates (PATCH), and JWT authentication for secure access.
 
 ---
 
@@ -10,8 +10,8 @@ Supports CRUD operations and partial updates using HTTP PATCH.
 - **Add new students**
 - **Partially update** student fields (PATCH)
 - **Delete** students
-- Data stored in a local `students.json` file
-- No database required
+- **JWT-based authentication** to secure API endpoints
+- Data stored in a local `students.json` file — no database needed
 
 ---
 
@@ -23,21 +23,24 @@ Supports CRUD operations and partial updates using HTTP PATCH.
 ---
 
 ## Project Structure
+
 ```
 StudentManagementAPI/
 │
 ├── Controllers/
-│   └── StudentsController.cs
+│ ├── StudentsController.cs
+│ └── AuthController.cs
 │
 ├── Models/
-│   └── Student.cs
+│ └── Student.cs
 │
 ├── Services/
-│   └── StudentService.cs
+│ └── StudentService.cs
 │
 ├── Data/
-│   └── students.json  (auto-created)
+│ └── students.json (auto-created)
 │
+├── appsettings.json
 ├── Program.cs
 └── README.md
 ```
@@ -47,7 +50,7 @@ StudentManagementAPI/
 ## Running the Project
 1. Clone the repository:
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/animesh156/StudentManagementAPI.git
    cd StudentManagementAPI
    ```
 
@@ -68,6 +71,37 @@ StudentManagementAPI/
    ```
 
 ---
+
+
+
+
+## Authentication
+
+### Obtain JWT token
+```http
+POST /api/auth/login
+Content-Type: application/json
+```
+
+**Body:**
+```json
+    {
+  "username": "admin",
+  "password": "password"
+}
+```
+
+**Response:**
+```json
+{
+  "token": "<JWT_TOKEN>"
+}
+
+```
+##### Use this token as a Bearer token in the Authorization header for all protected endpoints.
+
+
+
 
 ## API Endpoints
 
